@@ -1,0 +1,125 @@
+[STATION]
+class = FTXn
+my_county = GWIN
+my_gridsquare = EM73
+my_name = John Doe
+operator = W4FAKE
+
+[JS8Call]
+host = 127.0.0.1
+port = 2217
+
+[TCP]
+enabled = false
+host = 127.0.0.1
+port = 2442
+poll_status_interval = 1
+
+[AUTH]
+enabled = false
+token = fixme
+
+[N1MM]
+enabled = false
+host = 127.0.0.1
+port = 2237
+
+[GRIDTRACKER]
+enabled = false
+host = 127.0.0.1
+port = 2237
+
+[GEOSERVER]
+enabled_msg = false
+enabled_spot = false
+host = 127.0.0.1
+port = 23000
+token = fixme
+
+[YAAC]
+enabled = false
+logfile = jsmapper.csv
+
+[ADIF]
+enabled = false
+logfile = jsmonitor.adi
+
+[SMTP]
+enabled = false
+host = 127.0.0.1
+port = 25
+user = 
+pass = 
+mailfrom = sender@email.com
+mailto = user@email.com
+
+[GREEN]
+search = PIR1=G
+map = MODE:JT4A
+color = #00f900
+aprs = ['\','W']
+
+[YELLOW]
+search = PIR1=Y
+map = MODE:JT4B
+color = #fffb00
+aprs = ['\','U']
+
+[RED]
+search = PIR1=R
+map = MODE:JT4C
+color = #ff2600
+aprs = ['/',':']
+
+[UNKNOWN]
+search = PIR1=U
+map = MODE:JT4D
+color = #ff9300
+aprs = ['\','0']
+
+[NOPIR]
+map = MODE:JT4E
+color = #00fdff
+aprs = ['\','.']
+
+[NOINFO]
+map = MODE:JT4F
+color = #ff40ff
+aprs = ['\','!']
+
+[STATUS]
+map = MODE:JT4G
+color = #942192
+aprs = ['\',')']
+
+[GRIDS]
+frominfo = true
+gridlength = 6
+map_all = true
+map_cq = true
+map_heartbeat = true
+map_info = true
+map_status = true
+map_log = true
+map_qso = true
+map_snr = true
+auto_close = false
+
+[DATABASES]
+location = c:\ham0\
+fccdata = false
+hamcallcd = false
+raccd = false
+localdb = false
+localdb_learn = false
+collect_rejects = false
+callook = false
+hamcallonline = false
+hcusername = 
+hcpassword = 
+
+[DEBUG]
+consolelevel = 1
+logfilelevel = 1
+logfile = js8callmonitor.log
+
