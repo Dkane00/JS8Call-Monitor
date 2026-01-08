@@ -10,7 +10,7 @@ import os
 import configparser
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
                              QHBoxLayout, QLabel, QGroupBox, QGridLayout, 
-                             QPushButton, QStyle, QStyleFactory)
+                             QPushButton, QDialog)
 from PyQt5.QtCore import QTimer, Qt, pyqtSignal, QThread
 from PyQt5.QtGui import QIcon, QPalette, QColor
 import socket
@@ -20,6 +20,8 @@ from distutils.util import strtobool
 
 # Import the monitor module
 import js8call_monitor
+# Import the settings dialog
+from settings import SettingsDialog
 
 class ConnectionStatus:
     """Track connection status for each protocol"""
@@ -156,7 +158,7 @@ class JS8CallMonitorGUI(QMainWindow):
         
     def init_ui(self):
         """Initialize the user interface"""
-        self.setWindowTitle("JS8Call Monitor v0.21")
+        self.setWindowTitle("JS8Call Monitor v1.0")
         self.setMinimumSize(600, 400)
         
         # Central widget
@@ -193,6 +195,23 @@ class JS8CallMonitorGUI(QMainWindow):
         
         # Button layout
         button_layout = QHBoxLayout()
+        
+        # Settings button
+        settings_btn = QPushButton("Settings")
+        settings_btn.setStyleSheet("""
+            QPushButton {
+                background-color: #0066cc;
+                color: white;
+                padding: 8px 16px;
+                font-weight: bold;
+            }
+            QPushButton:hover {
+                background-color: #0077dd;
+            }
+        """)
+        settings_btn.clicked.connect(self.open_settings)
+        button_layout.addWidget(settings_btn)
+        
         button_layout.addStretch()
         
         # Exit button
@@ -330,6 +349,13 @@ class JS8CallMonitorGUI(QMainWindow):
             # Force connected status after initial startup
             if force:
                 indicator.update_led(True)
+    
+    def open_settings(self):
+        """Open settings dialog"""
+        dialog = SettingsDialog(self)
+        if dialog.exec_() == QDialog.Accepted:
+            # Settings were saved, show message about restart
+            pass
         
     def show_error(self, error_msg):
         """Display error message"""
