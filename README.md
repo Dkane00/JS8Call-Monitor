@@ -18,8 +18,11 @@ This program is designed to monitor the JS8Call application for various received
 
 ## Installation & Setup
 
-1.  **Clone or Download** this repository.
-    Unzip the contents of the `js8call_monitor.zip` file to a suitable place on your computer.
+1.  **Clone this repository**
+    Open your terminal and use `git` to clone the repository to your local machine:
+    ```bash
+    git clone https://github.com/Dkane00/JS8Call-Monitor.git
+    ```
 
 2.  **Install `pywsjtx` Library**
     You must copy the `pywsjtx` folder included in this download to your Python installation's library directory.
