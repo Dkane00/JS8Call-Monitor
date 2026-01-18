@@ -20,6 +20,7 @@ This program is designed to monitor the JS8Call application for various received
 
 1.  **Clone this repository**
     Open your terminal and use `git` to clone the repository to your local machine:
+    
     Github
     ```bash
     git clone https://github.com/Dkane00/JS8Call-Monitor.git
